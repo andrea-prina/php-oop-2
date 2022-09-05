@@ -14,12 +14,15 @@
         include_once __DIR__ . "./Classes/RegisteredUser.php";
         include_once __DIR__ . "./Classes/ShoppingCart.php";
         include_once __DIR__ . "./Classes/Product.php";
+        include_once __DIR__ . "./Classes/CreditCard.php";
 
         
         $cart1 = new ShoppingCart();
         
         $product1 = new Product("Croccantini 1kg", 50.00);
         $product2 = new Product("Cuccia", 50.00);
+
+        $creditCard1 = new CreditCard("5555-4444-3333-2222", "08/2023");
         
         $user1 = new RegisteredUser("Federica", "Massoletti", "Via Costanza, 2 20100 Milano", $cart1, "fm@mail.com", "12345", 20);
 
@@ -41,7 +44,8 @@
             $amountToPay = $user1->shoppingCart->getTotalPrice();
         }
 
-        echo "TOTAL AMOUNT TO PAY: " . $amountToPay;
+        echo "TOTAL AMOUNT TO PAY: " . $amountToPay . "<br>";
+        $creditCard1->checkCardValidity();
 
     ?>
 

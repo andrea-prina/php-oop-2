@@ -11,8 +11,10 @@
     <?php 
     
         include_once __DIR__ . "./Classes/User.php";
+        include_once __DIR__ . "./Classes/RegisteredUser.php";
 
-        $user1 = new User("Federica", "Massoletti");
+
+        $user1 = new RegisteredUser("Federica", "Massoletti", "Via Costanza, 2 20100 Milano", "fm@mail.com", "12345", 20);
 
         var_dump($user1);
     

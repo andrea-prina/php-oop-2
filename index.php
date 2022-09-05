@@ -15,24 +15,25 @@
         include_once __DIR__ . "./Classes/ShoppingCart.php";
         include_once __DIR__ . "./Classes/Product.php";
 
-
-        $user1 = new RegisteredUser("Federica", "Massoletti", "Via Costanza, 2 20100 Milano", "fm@mail.com", "12345", 20);
-
-        var_dump($user1);
-
-        $product1 = new Product("Croccantini 1kg", 23.50);
-        $product2 = new Product("Cuccia", 54.00);
-
         
         $cart1 = new ShoppingCart();
-        var_dump($cart1);
         
-        $cart1->addItem($product1);
-        $cart1->addItem($product2);
+        $product1 = new Product("Croccantini 1kg", 23.50);
+        $product2 = new Product("Cuccia", 54.00);
         
-        var_dump($cart1);
+        $user1 = new RegisteredUser("Federica", "Massoletti", "Via Costanza, 2 20100 Milano", $cart1, "fm@mail.com", "12345", 20);
+        
+        // var_dump($cart1);
+        
+        $user1->shoppingCart->addItem($product1);
+        $user1->shoppingCart->addItem($product2);
+        
+        // var_dump($cart1);
+        
+        var_dump($user1);
 
-        echo 'Total Price: ' . $cart1->getTotalPrice();
+        echo "TOTAL PRICE: " . $user1->shoppingCart->getTotalPrice();
+
     ?>
 
 

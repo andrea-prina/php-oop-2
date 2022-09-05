@@ -8,9 +8,9 @@
         protected $password;
         protected $discountPercentage;
 
-        public function __construct($_firstName, $_lastName, $_shippingAddress, $_email, $_password, $_discountPercentage)
+        public function __construct($_firstName, $_lastName, $_shippingAddress, $_shoppingCart, $_email, $_password, $_discountPercentage)
         {
-            parent::__construct($_firstName, $_lastName, $_shippingAddress);
+            parent::__construct($_firstName, $_lastName, $_shippingAddress, $_shoppingCart);
             $this->setEmail($_email);
             $this->setPassword($_password);
             $this->setDiscountPercentage($_discountPercentage);
